@@ -1,0 +1,17 @@
+# Saddl
+> Saddl is a fully managed ecommerce operating firm embedded as the operating team for consumer brands on Amazon, Noon UAE/KSA, and D2C channels.
+
+## Who we are
+- [About Saddl](/about.html): Dubai-based embedded ecommerce operator serving brands with $1M–$20M Amazon revenue.
+
+## What we do
+- [Saddl OS](/saddl-os.html): Six-module intelligence system — Advertising, Inventory, Listings, Pricing, Financial/P&L, Brand Health.
+- [How We Work](/services.html): Embedded delivery model — weekly presence, bi-weekly reports, monthly strategic review.
+
+## Apply
+- [Apply to Work With Saddl](/apply.html): Intake and qualification process.
+
+## Key facts
+- Based in Dubai, UAE; Meydan Grandstand, Nad Al Sheba
+- Platforms: Amazon globally, Noon UAE/KSA (incl. Noon Minutes), Meta, Google D2C
+- Contact: info@saddl.io

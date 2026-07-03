@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Fragment+Mono:ital@0;1&family=Gloock&display=swap');
+
+:root {
+    /* ── Recomposed "Pine" palette — adapted from user reference, desaturated for brand fit ── */
+    --jade:       oklch(0.400 0.068 173);
+    --jade-dark:  oklch(0.310 0.058 173);
+    --jade-mist:  oklch(0.760 0.050 173);
+    --ink:        var(--jade);
+    --ink-deep:   var(--jade-dark);
+    --surface:    oklch(0.975 0.006 118.5);
+    --section-deep: oklch(0.923 0.033 118.5); /* exact match to the referenced swatch (#E3E9D1) — the alternating grid tone */
+    --card:       oklch(1.000 0.000 0);
+    --card-dark:  var(--jade-dark);
+    --muted:      oklch(0.550 0.050 173); /* slightly lighter version for muted text */
+    --hairline:   oklch(0.900 0.006 118.5);
+    --hairline-d: oklch(1 0 0 / 0.07);
+    --spring:     cubic-bezier(0.16, 1, 0.3, 1);
+    --sh-card:    0 1px 2px oklch(0 0 0/.03), 0 4px 8px oklch(0 0 0/.05), 0 16px 32px -8px oklch(0 0 0/.09);
+    --sh-panel:   0 8px 24px oklch(0 0 0/.14), 0 40px 80px -20px oklch(0 0 0/.30), 0 80px 120px -40px oklch(0 0 0/.18), inset 0 0 0 1px oklch(1 0 0/.07);
+  
+    /* Added from DESIGN.md */
+    --shadow-card: 0 1px 2px oklch(0 0 0 / 0.03), 0 4px 8px oklch(0 0 0 / 0.05), 0 16px 32px -8px oklch(0 0 0 / 0.09);
+    --shadow-card-hover: 0 2px 4px oklch(0 0 0 / 0.05), 0 12px 24px oklch(0 0 0 / 0.09), 0 32px 64px -16px oklch(0 0 0 / 0.13);
+    --shadow-panel: 0 8px 24px oklch(0 0 0 / 0.12), 0 40px 80px -20px oklch(0 0 0 / 0.28), 0 80px 120px -40px oklch(0 0 0 / 0.16), inset 0 0 0 1px oklch(1 0 0 / 0.07);
+    --shadow-nav: 0 2px 8px oklch(0 0 0 / 0.12), 0 8px 24px oklch(0 0 0 / 0.10);
+    
+    --r-sm: 8px;
+    --r-md: 10px;
+    --r-nav: 16px;
+    --r-card: 20px;
+    --r-panel: 24px;
+}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--surface);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2.5rem);position:relative;z-index:2}
+  .s-xl{padding:clamp(3rem,6vw,5rem) 0}
+
+  /* ── Texture system: ledger grid + volumetric light + grain ──
+     "Ledger Sheet" motif taken further: two-axis rule grid (like ruled
+     accounting paper) plus soft-light volumetric gradients for depth,
+     plus a fine grain layer so surfaces don't read as flat digital fills. */
+  .tex-ledger{
+    position:relative; isolation:isolate;
+    background-color:var(--surface);
+    background-image:
+      repeating-linear-gradient(90deg, transparent, transparent 79px, oklch(0 0 0/.04) 79px, oklch(0 0 0/.04) 80px),
+      repeating-linear-gradient(0deg, transparent, transparent 79px, oklch(0 0 0/.04) 79px, oklch(0 0 0/.04) 80px),
+      radial-gradient(ellipse 60% 50% at 12% -10%, oklch(1 0 0/.9), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 105% 20%, oklch(.400 .068 173/.4), transparent 60%),
+      radial-gradient(ellipse 65% 55% at 50% 118%, oklch(0 0 0/.06), transparent 65%);
+    background-blend-mode: normal, normal, soft-light, soft-light, multiply;
+  }
+  .tex-deep{
+    /* The section-rhythm "step down" — a deeper sage tone, NOT near-black.
+       Previous version used --ink-deep (near-black) here and the jump from
+       --surface read as a jarring light→black cut. This keeps the same
+       ledger-grid + volumetric-light language but stays inside the light
+       family, one tonal step darker, matching a gentler two-tone rhythm. */
+    position:relative; isolation:isolate;
+    background-color:var(--section-deep);
+    background-image:
+      repeating-linear-gradient(90deg, transparent, transparent 79px, oklch(0 0 0/.04) 79px, oklch(0 0 0/.04) 80px),
+      repeating-linear-gradient(0deg, transparent, transparent 79px, oklch(0 0 0/.04) 79px, oklch(0 0 0/.04) 80px),
+      radial-gradient(ellipse 65% 55% at 88% -12%, oklch(.400 .068 173/.28), transparent 62%),
+      radial-gradient(ellipse 55% 50% at -5% 105%, oklch(1 0 0/.5), transparent 58%);
+    background-blend-mode: normal, normal, soft-light, soft-light;
+  }
+  .grain::after{
+    content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='matrix' values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0.3 0.6 0.1 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:240px 240px;
+    opacity:.06;
+    mix-blend-mode:overlay;
+  }
+  .t-display{font-weight:800;letter-spacing:-0.03em;line-height:1.0;font-size:clamp(2rem, 4.5vw, 3.5rem);text-wrap:balance}
+  .t-headline{font-family:'Gloock',Georgia,serif;font-weight:400;letter-spacing:-0.02em;line-height:1.10;font-size:clamp(1.25rem, 2.5vw, 2rem);text-wrap:balance;color:var(--jade)}
+  .t-body-lg{font-size:0.9375rem;line-height:1.6}
+  .t-data{font-family:'Fragment Mono',monospace;font-size:.75rem;letter-spacing:.01em;line-height:1.5}
+  .c-jade{color:var(--jade)} .c-muted{color:var(--muted)}
+
+  .site-nav {
+    position: fixed; top: 8px; left: 50%; transform: translateX(-50%);
+    width: fit-content; max-width: calc(100% - 48px);
+    background: var(--ink-deep); border-radius: 20px; padding: 4px 12px;
+    display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: nowrap;
+    z-index: 200; box-shadow: 0 2px 8px oklch(0 0 0/.14), 0 8px 28px oklch(0 0 0/.12);
+  }
+  .nav-wordmark { font-family: 'Gloock', Georgia, serif; font-size: 1.125rem; color: var(--jade-mist); text-decoration: none; white-space: nowrap; }
+  .nav-links { display: flex; align-items: center; gap: 1rem; }
+  .nav-link { font-size: 0.8125rem; font-weight: 600; color: #fff; text-decoration: none; opacity: 0.8; transition: opacity 0.2s; white-space: nowrap; }
+  .nav-link:hover { opacity: 1; }
+  
+  .btn-nav{background:var(--card);color:var(--ink);border:1px solid var(--hairline);border-radius:100px;padding:6px 14px;font-size:.75rem;font-weight:700;text-decoration:none;transition:all .2s;white-space:nowrap}
+  .btn-nav:hover{background:var(--jade);color:#fff}
+  
+  .btn{background:var(--ink);color:var(--surface);border-radius:10px;padding:14px 32px;font-size:1rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;border:none;cursor:pointer}
+  .btn:hover{background:oklch(0 0 0/.8)}
+  .btn-jade{background:var(--jade);color:#fff;border-radius:10px;padding:14px 32px;font-size:1rem}
+  .btn-jade:hover{background:var(--jade-dark)}
+  .btn-outline{background:transparent;border:1.5px solid var(--hairline);color:var(--ink);border-radius:10px;padding:13px 31px;font-size:1rem;text-decoration:none;display:inline-block}
+  .btn-outline:hover{border-color:oklch(.75 .02 118.5);background:oklch(.96 .006 118.5)}
+
+  .s-hero{padding-top:clamp(1rem,2vw,1.5rem);padding-bottom:clamp(0.5rem,1vw,1rem)}
+  .hero-glow{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 50% -5%,oklch(.400 .068 173/.09) 0%,transparent 80%);mix-blend-mode:soft-light}
+  .hero-chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--hairline);border-radius:100px;padding:4px 4px 4px 12px;margin-bottom:2rem}
+  .hero-chip-tag{font-size:.6875rem;font-weight:800;color:var(--jade);letter-spacing:.05em;text-transform:uppercase}
+  .hero-chip-text{font-size:.8125rem;color:var(--muted)}
+  .hero-body{max-width:640px;margin:1.75rem 0 2.5rem;color:var(--muted)}
+  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+  .hero-plat{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:3rem;font-family:'Fragment Mono',monospace;font-size:.8125rem;color:var(--muted)}
+
+  /* module grid */
+  .s-modules{padding:clamp(3rem,6vw,5rem) 0}
+  .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:3rem}
+  .module-card{background:var(--card);border:1px solid oklch(0 0 0/.07);border-radius:20px;padding:28px;box-shadow:var(--sh-card)}
+  .module-card h3{color:var(--ink);font-size:0.9375rem;font-weight:700;margin-bottom:.6rem}
+  .module-card p{color:var(--muted);font-size:0.875rem;line-height:1.6;margin-bottom:1rem}
+  .module-data{font-family:'Fragment Mono',monospace;font-size:.7rem;color:var(--muted);padding-top:1rem;border-top:1px solid oklch(0 0 0/.08)}
+  .icon-tile{width:40px;height:40px;border-radius:10px;background:oklch(.400 .068 173/.10);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--jade)}
+
+  /* proof */
+  .proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:3rem}
+  .proof-card{background:var(--card);border:1px solid var(--hairline);border-radius:20px;padding:32px;box-shadow:var(--sh-card);position:relative;display:flex;flex-direction:column;height:100%}
+  .proof-card .proof-author{margin-top:auto !important;padding-top:1.5rem}
+  .proof-card q{display:block;font-size:0.9375rem;line-height:1.6;color:var(--ink)}
+  .proof-attr{margin-top:1.25rem;font-size:.75rem;color:var(--muted)}
+
+  /* apply */
+  .s-apply{color:var(--ink);padding:clamp(4rem,8vw,6rem) 0;text-align:center;overflow:hidden}
+  .s-apply p{color:var(--muted);max-width:520px;margin:1.25rem auto 2.5rem;font-size:0.875rem}
+
+  section + section{border-top:none}
+  .swatch-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.5rem}
+  .swatch{width:56px;height:56px;border-radius:10px;border:1px solid var(--hairline);display:flex;align-items:flex-end;justify-content:center;font-family:'Fragment Mono',monospace;font-size:.5625rem;color:var(--muted);padding-bottom:4px}
+
+/* Added back for compatibility with some Tailwind/existing site structures */
+.collective-theme {
+  background-color: var(--surface);
+  color: var(--ink);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--spring), transform 0.8s var(--spring);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-muted { color: var(--muted); }
+.text-jade { color: var(--jade); }
+
+/* Added from DESIGN.md */
+section.s-hero { overflow: visible; position: relative; z-index: 20; }
+.hero-panel {
+  position: relative; z-index: 10;
+  margin: 3.5rem auto -200px;
+  max-width: 960px;
+  background: linear-gradient(145deg, oklch(0.10 0.012 80), oklch(0.072 0.012 80));
+  border-radius: var(--r-panel); overflow: hidden;
+  box-shadow: var(--shadow-panel);
+  animation: panel-enter 1.2s var(--spring) 0.5s both;
+}
+.s-after-hero { padding-top: calc(60px + clamp(1rem,2vw,1.5rem)); }
+
+@keyframes panel-enter {
+  0% { transform: translateY(40px) scale(0.98); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Step Card */
+.step-card {
+  background: var(--card);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--hairline);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--spring), box-shadow 0.4s var(--spring);
+}
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+.step-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--jade);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--spring);
+}
+.step-card:hover::after {
+  transform: scaleX(1);
+}
+.step-num {
+  font-family: 'Fragment Mono', monospace;
+  color: var(--jade);
+  font-size: var(--r-sm);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* FAQ Accordion */
+.faq-item {
+  border-top: 1px solid var(--hairline);
+  background: var(--card);
+}
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--ink);
+}
+.faq-icon {
+  color: var(--jade);
+  transition: transform 0.4s var(--spring);
+  font-size: 1.5rem;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--spring);
+  padding: 0 2rem;
+  color: var(--muted);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  padding-bottom: 1.5rem;
+}
+
+
+/* Ticker Animation */
+@keyframes ticker-scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }

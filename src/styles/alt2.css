@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Fragment+Mono&family=Gloock&display=swap');
+
+/* Textures */
+.bg-dot-grid-2 {
+  background-image: radial-gradient(circle, oklch(0.15 0.01 80 / 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-line-grid-2 {
+  background-image: linear-gradient(oklch(1 0 0 / 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, oklch(1 0 0 / 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Hero Volumetric Lighting */
+.hero-lighting::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 0%, oklch(1 0 0 / 0.55) 0%, transparent 60%),
+    radial-gradient(circle at 20% 70%, oklch(1 0 0 / 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 40%, oklch(1 0 0 / 0.10) 0%, transparent 45%);
+}
+
+/* Shadow System from DESIGN (1).md */
+.shadow-whisper {
+  box-shadow: 0 4px 20px oklch(0.10 0.015 80 / 0.04);
+}
+
+.shadow-soft {
+  box-shadow: 0 8px 30px oklch(0.10 0.015 80 / 0.06);
+}
+
+.shadow-card-deep {
+  box-shadow: 0 40px 80px -20px oklch(0.10 0.015 80 / 0.18);
+}
+.shadow-card-deep:hover {
+  box-shadow: 0 48px 96px -20px oklch(0.10 0.015 80 / 0.22);
+}
+
+.shadow-dark-section {
+  box-shadow: 0 12px 32px oklch(0.05 0.01 80 / 0.50), inset 0 0 0 1px oklch(1 0 0 / 0.05);
+}
+
+/* Float Animations */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+/* Scroll Reveals */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* FAQ Accordion */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-answer.expanded {
+  max-height: 500px;
+}

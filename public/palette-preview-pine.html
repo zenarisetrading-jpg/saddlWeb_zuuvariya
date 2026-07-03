@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palette Preview — Pine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Bricolage+Grotesque:opsz,wght@12..60,300;12..60,400;12..60,500;12..60,600;12..60,700;12..60,800&family=Fragment+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* ── Recomposed "Pine" palette — adapted from user reference, desaturated for brand fit ── */
+    --jade:       oklch(0.400 0.068 173);
+    --jade-dark:  oklch(0.310 0.058 173);
+    --jade-mist:  oklch(0.760 0.050 173);
+    --ink:        oklch(0.100 0.012 118.5);
+    --ink-deep:   oklch(0.072 0.010 118.5);
+    --surface:    oklch(0.975 0.006 118.5);
+    --section-deep: oklch(0.923 0.033 118.5); /* exact match to the referenced swatch (#E3E9D1) — the alternating grid tone */
+    --card:       oklch(1.000 0.000 0);
+    --card-dark:  oklch(0.115 0.010 118.5);
+    --muted:      oklch(0.470 0.028 165); /* passes 4.5:1+ on --surface, --card, and --section-deep alike */
+    --hairline:   oklch(0.900 0.006 118.5);
+    --hairline-d: oklch(1 0 0 / 0.07);
+    --spring:     cubic-bezier(0.16, 1, 0.3, 1);
+    --sh-card:    0 1px 2px oklch(0 0 0/.03), 0 4px 8px oklch(0 0 0/.05), 0 16px 32px -8px oklch(0 0 0/.09);
+    --sh-panel:   0 8px 24px oklch(0 0 0/.14), 0 40px 80px -20px oklch(0 0 0/.30), 0 80px 120px -40px oklch(0 0 0/.18), inset 0 0 0 1px oklch(1 0 0/.07);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--surface);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2.5rem);position:relative;z-index:2}
+  .s-xl{padding:clamp(5rem,10vw,8rem) 0}
+
+  /* ── Texture system: ledger grid + volumetric light + grain ──
+     "Ledger Sheet" motif taken further: two-axis rule grid (like ruled
+     accounting paper) plus soft-light volumetric gradients for depth,
+     plus a fine grain layer so surfaces don't read as flat digital fills. */
+  .tex-ledger{
+    position:relative; isolation:isolate;
+    background-color:var(--surface);
+    background-image:
+      repeating-linear-gradient(90deg, transparent, transparent 79px, oklch(0 0 0/.05) 79px, oklch(0 0 0/.05) 80px),
+      repeating-linear-gradient(0deg, transparent, transparent 31px, oklch(0 0 0/.032) 31px, oklch(0 0 0/.032) 32px),
+      radial-gradient(ellipse 60% 50% at 12% -10%, oklch(1 0 0/.9), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 105% 20%, oklch(.400 .068 173/.4), transparent 60%),
+      radial-gradient(ellipse 65% 55% at 50% 118%, oklch(0 0 0/.06), transparent 65%);
+    background-blend-mode: normal, normal, soft-light, soft-light, multiply;
+  }
+  .tex-deep{
+    /* The section-rhythm "step down" — a deeper sage tone, NOT near-black.
+       Previous version used --ink-deep (near-black) here and the jump from
+       --surface read as a jarring light→black cut. This keeps the same
+       ledger-grid + volumetric-light language but stays inside the light
+       family, one tonal step darker, matching a gentler two-tone rhythm. */
+    position:relative; isolation:isolate;
+    background-color:var(--section-deep);
+    background-image:
+      repeating-linear-gradient(90deg, transparent, transparent 79px, oklch(0 0 0/.05) 79px, oklch(0 0 0/.05) 80px),
+      repeating-linear-gradient(0deg, transparent, transparent 31px, oklch(0 0 0/.032) 31px, oklch(0 0 0/.032) 32px),
+      radial-gradient(ellipse 65% 55% at 88% -12%, oklch(.400 .068 173/.28), transparent 62%),
+      radial-gradient(ellipse 55% 50% at -5% 105%, oklch(1 0 0/.5), transparent 58%);
+    background-blend-mode: normal, normal, soft-light, soft-light;
+  }
+  .grain::after{
+    content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='matrix' values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0.3 0.6 0.1 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:240px 240px;
+    opacity:.06;
+    mix-blend-mode:overlay;
+  }
+  .t-display{font-weight:800;letter-spacing:-0.03em;line-height:1.0;font-size:clamp(3.25rem,7vw,6rem);text-wrap:balance}
+  .t-headline{font-family:'Gloock',Georgia,serif;font-weight:400;letter-spacing:-0.02em;line-height:1.10;font-size:clamp(1.875rem,3.8vw,3rem);text-wrap:balance;color:var(--jade)}
+  .t-body-lg{font-size:1.125rem;line-height:1.72}
+  .t-data{font-family:'Fragment Mono',monospace;font-size:.8125rem;letter-spacing:.01em;line-height:1.5}
+  .c-jade{color:var(--jade)} .c-muted{color:var(--muted)}
+
+  /* nav */
+  .site-nav {
+    position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+    width: fit-content; max-width: calc(100% - 48px);
+    background: var(--ink-deep); border-radius: 24px; padding: 8px 8px 8px 20px;
+    display: flex; align-items: center; justify-content: center; gap: 2rem;
+    z-index: 200; box-shadow: 0 2px 8px oklch(0 0 0/.14), 0 8px 28px oklch(0 0 0/.12);
+  }
+  .nav-wordmark { font-family: 'Gloock', Georgia, serif; font-size: 1.125rem; color: var(--jade-mist); text-decoration: none; }
+  .nav-left { display: flex; align-items: center; width: 260px; justify-content: flex-start; }
+  .nav-right { display: flex; align-items: center; width: 260px; justify-content: flex-end; }
+  .nav-links { display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .nav-link{font-size:.875rem;font-weight:500;padding:7px 14px;border-radius:8px;color:oklch(1 0 0/.55);text-decoration:none}
+  .nav-link:hover{color:oklch(1 0 0/.90);background:oklch(1 0 0/.07)}
+  .btn-nav{background:#fff;color:var(--ink-deep);border-radius:10px;padding:10px 18px;font-size:.875rem;font-weight:700;text-decoration:none}
+  .btn-nav:hover{background:var(--jade);color:#fff}
+
+  /* buttons */
+  .btn{display:inline-block;font-weight:700;text-decoration:none;cursor:pointer;border:none}
+  .btn-jade{background:var(--jade);color:#fff;border-radius:10px;padding:14px 32px;font-size:1rem}
+  .btn-jade:hover{background:var(--jade-dark)}
+  .btn-outline{background:transparent;border:1.5px solid var(--hairline);color:var(--ink);border-radius:10px;padding:13px 31px;font-size:1rem;text-decoration:none;display:inline-block}
+  .btn-outline:hover{border-color:oklch(.75 .02 118.5);background:oklch(.96 .006 118.5)}
+
+  /* hero */
+  .s-hero{padding-top:clamp(8rem,16vw,11rem);padding-bottom:clamp(3rem,5vw,4rem)}
+  .hero-glow{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 50% -5%,oklch(.400 .068 173/.09) 0%,transparent 80%);mix-blend-mode:soft-light}
+  .hero-chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--hairline);border-radius:100px;padding:4px 4px 4px 12px;margin-bottom:2rem}
+  .hero-chip-tag{font-size:.6875rem;font-weight:800;color:var(--jade);letter-spacing:.05em;text-transform:uppercase}
+  .hero-chip-text{font-size:.8125rem;color:var(--muted)}
+  .hero-body{max-width:640px;margin:1.75rem 0 2.5rem;color:var(--muted)}
+  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+  .hero-plat{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:3rem;font-family:'Fragment Mono',monospace;font-size:.8125rem;color:var(--muted)}
+
+  /* module grid */
+  .s-modules{padding:clamp(5rem,10vw,8rem) 0}
+  .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:3rem}
+  .module-card{background:var(--card);border:1px solid oklch(0 0 0/.07);border-radius:20px;padding:28px;box-shadow:var(--sh-card)}
+  .module-card h3{color:var(--ink);font-size:1.0625rem;font-weight:700;margin-bottom:.6rem}
+  .module-card p{color:var(--muted);font-size:.9375rem;line-height:1.6;margin-bottom:1rem}
+  .module-data{font-family:'Fragment Mono',monospace;font-size:.75rem;color:var(--muted);padding-top:1rem;border-top:1px solid oklch(0 0 0/.08)}
+  .icon-tile{width:44px;height:44px;border-radius:10px;background:oklch(.400 .068 173/.10);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--jade)}
+
+  /* proof */
+  .proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:3rem}
+  .proof-card{background:var(--card);border:1px solid var(--hairline);border-radius:20px;padding:32px;box-shadow:var(--sh-card);position:relative}
+  .proof-card q{display:block;font-size:1.0625rem;line-height:1.6;color:var(--ink)}
+  .proof-attr{margin-top:1.25rem;font-size:.8125rem;color:var(--muted)}
+
+  /* apply */
+  .s-apply{color:var(--ink);padding:clamp(6rem,12vw,9rem) 0;text-align:center;overflow:hidden}
+  .s-apply p{color:var(--muted);max-width:520px;margin:1.25rem auto 2.5rem}
+
+  section + section{border-top:none}
+  .swatch-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.5rem}
+  .swatch{width:56px;height:56px;border-radius:10px;border:1px solid var(--hairline);display:flex;align-items:flex-end;justify-content:center;font-family:'Fragment Mono',monospace;font-size:.5625rem;color:var(--muted);padding-bottom:4px}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-left"><a href="#" class="nav-wordmark">Saddl</a></div>
+  <div class="nav-links">
+    <a href="#" class="nav-link">Saddl OS</a>
+    <a href="#" class="nav-link">Services</a>
+    <a href="#" class="nav-link">About</a>
+    <a href="#" class="nav-link">Blog</a>
+  </div>
+  <div class="nav-right"><a href="#" class="btn-nav">Request an account audit</a></div>
+</nav>
+
+<section class="s-hero tex-ledger grain">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="hero-chip">
+      <span class="hero-chip-tag">embedded ecommerce operations</span>
+      <span class="hero-chip-text"></span>
+    </div>
+    <h1 class="t-display">Your ecommerce runs on hundreds of decisions a week.<br>We own every one of them.</h1>
+    <p class="hero-body t-body-lg">Advertising, inventory, pricing, listings, and contribution margin — run as one system everywhere you sell, from Amazon and Walmart to Noon and your own D2C. Not software you operate. A team that operates it for you.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn btn-jade">Request an account audit</a>
+      <a href="#" class="btn-outline">Explore Saddl OS</a>
+    </div>
+    <div class="hero-plat">
+      <span>Amazon (Global)</span><span style="margin-left: 1.5rem">Noon UAE/KSA</span><span style="margin-left: 1.5rem">Walmart</span><span style="margin-left: 1.5rem">Meta & Google D2C</span>
+    </div>
+
+    <div class="swatch-row">
+      <div class="swatch" style="background:var(--jade);color:#fff">jade</div>
+      <div class="swatch" style="background:var(--jade-dark);color:#fff">j-dark</div>
+      <div class="swatch" style="background:var(--jade-mist)">mist</div>
+      <div class="swatch" style="background:var(--ink-deep);color:#fff">ink-deep</div>
+      <div class="swatch" style="background:var(--section-deep)">deep</div>
+      <div class="swatch" style="background:var(--surface)">surface</div>
+      <div class="swatch" style="background:var(--card)">card</div>
+      <div class="swatch" style="background:var(--muted);color:#fff">muted</div>
+      <div class="swatch" style="background:var(--hairline)">hairline</div>
+    </div>
+  </div>
+</section>
+
+<section class="s-modules tex-deep grain">
+  <div class="wrap">
+    <h2 class="t-headline">One operating system. Six intelligence layers.</h2>
+    <p class="c-muted" style="max-width:520px;margin-top:.75rem">Built for the number that matters — contribution margin per SKU, not vanity metrics.</p>
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="icon-tile">◆</div>
+        <h3>Advertising Intelligence</h3>
+        <p>Campaign architecture, bid optimisation, and keyword strategy across every channel — every decision inventory-aware and margin-aware, not ROAS in isolation.</p>
+        <div class="module-data">Jun 12 · bid +22% · +$1,250 validated impact</div>
+      </div>
+      <div class="module-card">
+        <div class="icon-tile">◆</div>
+        <h3>Inventory Intelligence</h3>
+        <p>Continuous SKU tracking, OOS-risk flags, and reorders sized against real velocity, not habit.</p>
+        <div class="module-data">B08XYZABC · 47 units left · ETA 18 days</div>
+      </div>
+      <div class="module-card">
+        <div class="icon-tile">◆</div>
+        <h3>Listing & Content</h3>
+        <p>AI-assisted content with operator judgment: correct browse-node classification, full keyword architecture, A+ built for rank and conversion.</p>
+        <div class="module-data">Listing update deployed · rank Δ +12</div>
+      </div>
+      <div class="module-card">
+        <div class="icon-tile">◆</div>
+        <h3>Pricing Intelligence</h3>
+        <p>Competitive monitoring with break-even and margin-floor analysis, so you know exactly how far you can move before price eats profit.</p>
+        <div class="module-data">Buy Box hold 94% · competitor Δ -$1.40</div>
+      </div>
+      <div class="module-card">
+        <div class="icon-tile">◆</div>
+        <h3>Financial Intelligence & P&L</h3>
+        <p>Settlement-level contribution margin per SKU after fees, fulfilment, storage, promotions, and ad spend. The real number.</p>
+        <div class="module-data">B08XYZABC · rev $18,420 · true CM $4,103</div>
+      </div>
+      <div class="module-card">
+        <div class="icon-tile">◆</div>
+        <h3>Brand Health</h3>
+        <p>Returns root-cause, review velocity, and rating integrity as one diagnostic — managed proactively, not discovered after the damage.</p>
+        <div class="module-data">3 suppressed listings · 2 resolved · 1 escalated</div>
+      </div>
+</div>
+  </div>
+</section>
+
+<section class="s-xl tex-ledger grain">
+  <div class="wrap">
+    <h2 class="t-headline">Specifics, not promises.</h2>
+    <p class="c-muted" style="max-width:520px;margin-top:.75rem">Real figures from brands we operate. Names withheld by request — outcomes are the point.</p>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <q>"We hadn't seen our true contribution margin until Saddl ran the reconciliation. It was $2.10 lower per unit than we thought — on 4,000 units a month."</q>
+        <div class="proof-attr">Consumer electronics, Amazon UAE</div>
+      </div>
+      <div class="proof-card">
+        <q>"The inventory call saved us ~AED 38,000 in storage fees we were about to rack up — flagged before we'd even started Q4 planning."</q>
+        <div class="proof-attr">Home & kitchen, Amazon KSA + Noon</div>
+      </div>
+      <div class="proof-card">
+        <q>"Six weeks in, ACoS dropped from 31% to 19% — not because we cut spend, because every bid was validated."</q>
+        <div class="proof-attr">Health & beauty, Amazon Global</div>
+      </div>
+</div>
+  </div>
+</section>
+
+<section class="s-apply tex-deep grain">
+  <div class="wrap">
+    <h2 class="t-headline">Your accounts are running right now.</h2>
+    <p>The question is whether someone accountable is running them.</p>
+    <a href="#" class="btn btn-jade">Request an account audit</a>
+  </div>
+</section>
+
+</body>
+</html>
