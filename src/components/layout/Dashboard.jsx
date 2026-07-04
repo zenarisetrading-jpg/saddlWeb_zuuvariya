@@ -14,7 +14,7 @@ import {
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground font-sans max-w-md mx-auto relative pb-20 shadow-xl overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-background text-foreground font-sans w-full max-w-full sm:max-w-md lg:max-w-lg mx-auto relative pb-20 shadow-xl overflow-hidden">
       
       {/* Header */}
       <header className="flex justify-between items-center p-6 pt-10">
@@ -108,7 +108,7 @@ const Dashboard = () => {
       </section>
 
       {/* Bottom Navigation */}
-      <nav className="absolute bottom-0 w-full max-w-md bg-background border-t border-border px-6 py-4 flex justify-between items-center z-50">
+      <nav className="absolute bottom-0 w-full max-w-full sm:max-w-md lg:max-w-lg bg-background border-t border-border px-6 py-4 flex justify-between items-center z-50">
         {[
           { icon: Home, label: 'Home', active: true },
           { icon: CreditCard, label: 'Cards' },

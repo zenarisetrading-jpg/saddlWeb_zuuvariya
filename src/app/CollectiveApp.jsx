@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import '../styles/collective.css';
 
 export default function CollectiveApp() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
   // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -21,14 +24,32 @@ export default function CollectiveApp() {
       {/* Navbar */}
       <nav className="coll-nav reveal">
         <div className="coll-nav-logo">Saddl</div>
-        <ul className="coll-nav-links">
+        <ul className={`coll-nav-links ${isNavOpen ? 'mobile-open' : ''}`}>
           <li>How We Engage</li>
           <li>Saddl OS</li>
           <li>Proof</li>
           <li>FAQ</li>
         </ul>
-        <a href="#apply" className="coll-nav-cta">Apply</a>
+        <div className="coll-nav-actions">
+          <a href="#apply" className="coll-nav-cta">Apply</a>
+          <button className="mobile-menu-btn" onClick={() => setIsNavOpen(!isNavOpen)}>
+            {isNavOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isNavOpen && (
+        <div className="mobile-nav-overlay" onClick={() => setIsNavOpen(false)}>
+          <ul className="mobile-nav-menu" onClick={e => e.stopPropagation()}>
+            <li><a href="#how-we-engage" onClick={() => setIsNavOpen(false)}>How We Engage</a></li>
+            <li><a href="#saddl-os" onClick={() => setIsNavOpen(false)}>Saddl OS</a></li>
+            <li><a href="#proof" onClick={() => setIsNavOpen(false)}>Proof</a></li>
+            <li><a href="#faq" onClick={() => setIsNavOpen(false)}>FAQ</a></li>
+            <li><a href="#apply" className="mobile-nav-cta" onClick={() => setIsNavOpen(false)}>Apply</a></li>
+          </ul>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="coll-hero">

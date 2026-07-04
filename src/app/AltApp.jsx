@@ -23,7 +23,7 @@ function Nav() {
             </button>
           </div>
 
-          <button className="md:hidden p-2" onClick={() => setIsOpen(true)}>
+          <button className="md:hidden p-3 -mr-3" onClick={() => setIsOpen(true)}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -36,7 +36,7 @@ function Nav() {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-[60] bg-white flex flex-col pt-24 px-8">
-          <button className="absolute top-6 right-6 p-2" onClick={() => setIsOpen(false)}>
+          <button className="absolute top-6 right-6 p-3" onClick={() => setIsOpen(false)}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>

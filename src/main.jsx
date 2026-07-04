@@ -1,15 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './styles/index.css'
-import App from './app/App.jsx'
-import AltApp from './app/AltApp.jsx'
-import AltApp2 from './app/AltApp2.jsx'
-import CollectiveApp from './app/CollectiveApp.jsx'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App.jsx'
 
-const path = window.location.pathname;
+// Import all styles
+import './styles/index.css'
+import './styles/App.css'
+import './styles/collective.css'
+import './styles/alt.css'
+import './styles/alt2.css'
+import './styles/global.css' // We'll move styles.css here
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {path === '/collective' ? <CollectiveApp /> : path === '/alt2' ? <AltApp2 /> : path === '/alt' ? <AltApp /> : <App />}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 )

@@ -100,7 +100,7 @@ export default function App() {
               Book Call
             </a>
           </div>
-          <button className="md:hidden text-white/60" onClick={() => setIsNavOpen(!isNavOpen)}>{isNavOpen ? <X size={20} /> : <Menu size={20} />}</button>
+          <button className="md:hidden text-white/60 p-3 -mr-3" onClick={() => setIsNavOpen(!isNavOpen)}>{isNavOpen ? <X size={24} /> : <Menu size={24} />}</button>
         </div>
         {isNavOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-[#030303]/95 backdrop-blur-3xl border-b border-white/[0.08] p-6 flex flex-col gap-5 h-screen">
@@ -141,7 +141,7 @@ export default function App() {
               </div>
             </motion.div>
             
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="text-white/60 text-sm md:text-base leading-relaxed space-y-4 font-['Bricolage_Grotesque'] md:pt-14 relative z-10">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} className="text-white/60 text-sm md:text-base leading-relaxed space-y-4 font-['Bricolage_Grotesque'] md:pt-14 relative z-10 mt-8 md:mt-0">
               <div className="p-6 bg-white/[0.03] border border-white/[0.15] rounded-2xl backdrop-blur-[2px] relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 <p className="mb-4">
