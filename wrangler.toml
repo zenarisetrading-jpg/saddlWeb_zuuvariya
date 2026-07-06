@@ -1,3 +1,4 @@
-name = "saddl-website"
+# wrangler.toml
+name = 'saddlwebzuuvariya'
 compatibility_date = "2024-03-29"
 pages_build_output_dir = "dist"
