@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "deploy": "wrangler pages deploy dist"
+    "deploy": "echo 'Deployment is handled automatically by Cloudflare Pages CI'"
   },
   "dependencies": {
     "clsx": "^2.1.1",
