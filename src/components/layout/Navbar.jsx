@@ -15,7 +15,7 @@ export default function Navbar() {
           <Link to="/saddl-os" className="nav-link">Saddl OS</Link>
           <Link to="/services" className="nav-link">Services</Link>
           <Link to="/about" className="nav-link">About</Link>
-          <Link to="/blogs" className="nav-link">Blog</Link>
+          <a href="/blogs/" className="nav-link">Blog</a>
         </div>
         <div className="nav-actions">
           <Link to="/apply" className="btn-nav hide-on-mobile">Request an account audit</Link>
@@ -35,7 +35,7 @@ export default function Navbar() {
             <li><Link to="/saddl-os" onClick={() => setIsNavOpen(false)}>Saddl OS</Link></li>
             <li><Link to="/services" onClick={() => setIsNavOpen(false)}>Services</Link></li>
             <li><Link to="/about" onClick={() => setIsNavOpen(false)}>About</Link></li>
-            <li><Link to="/blogs" onClick={() => setIsNavOpen(false)}>Blog</Link></li>
+            <li><a href="/blogs/" onClick={() => setIsNavOpen(false)}>Blog</a></li>
             <li><Link to="/apply" className="btn-nav" onClick={() => setIsNavOpen(false)}>Request an account audit</Link></li>
           </ul>
         </div>

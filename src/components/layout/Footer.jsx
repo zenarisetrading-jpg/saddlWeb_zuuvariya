@@ -9,7 +9,7 @@ export default function Footer() {
           <Link to="/saddl-os" className="hover:text-white transition-colors">Saddl OS</Link>
           <Link to="/services" className="hover:text-white transition-colors">Services</Link>
           <Link to="/about" className="hover:text-white transition-colors">About</Link>
-          <Link to="/blogs" className="hover:text-white transition-colors">Blog</Link>
+          <a href="/blogs/" className="hover:text-white transition-colors">Blog</a>
           <Link to="/faq" className="hover:text-white transition-colors">FAQ</Link>
           <Link to="/apply" className="hover:text-white transition-colors">Request an audit</Link>
           <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
