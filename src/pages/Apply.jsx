@@ -37,32 +37,32 @@ export default function Apply() {
           
           <div className="flex-1 reveal" style={{ transitionDelay: '0.1s' }}>
             <div className="hero-chip mb-6"><span className="hero-chip-tag">cleared desk</span></div>
-            <h1 className="t-display mb-6" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.1 }}>
+            <h1 className="t-display mb-6" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1.1, marginBottom: '32px' }}>
               Start with an audit,<br/>not a contract.
             </h1>
-            <p className="t-body-lg text-[var(--ink)] mb-12 max-w-xl">
+            <p className="t-body-lg text-[var(--ink)] max-w-xl" style={{ marginBottom: '48px', lineHeight: 1.6 }}>
               Read-only access. Within 48 hours you'll have a clear picture of where your accounts are leaking margin, missing attribution, and carrying inventory risk. No commitment, no sales sequence — just the brief. If it's a fit, we talk about running it.
             </p>
             
-            <h3 className="text-xl font-bold text-[var(--ink)] mb-6" style={{ fontFamily: 'var(--font-body)' }}>What you get from the audit</h3>
-            <ul className="space-y-4 text-lg text-[var(--muted)]">
+            <h3 className="t-body font-bold mb-4" style={{ marginBottom: '24px' }}>What you get from the audit</h3>
+            <ul className="space-y-4 t-body text-[var(--muted)]">
               <li className="flex items-start gap-3">
-                <span className="text-[var(--jade)] mt-1">✦</span> Contribution-margin gaps by SKU your dashboard isn't showing
+                <span className="text-[var(--jade)] mt-1">✦</span> <span className="flex-1">Contribution-margin gaps by SKU your dashboard isn't showing</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[var(--jade)] mt-1">✦</span> Attribution blind spots across advertising
+                <span className="text-[var(--jade)] mt-1">✦</span> <span className="flex-1">Attribution blind spots across advertising</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[var(--jade)] mt-1">✦</span> Inventory and OOS exposure across the catalogue
+                <span className="text-[var(--jade)] mt-1">✦</span> <span className="flex-1">Inventory and OOS exposure across the catalogue</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[var(--jade)] mt-1">✦</span> A week-one action list — what we'd change first
+                <span className="text-[var(--jade)] mt-1">✦</span> <span className="flex-1">A week-one action list — what we'd change first</span>
               </li>
             </ul>
           </div>
           
           <div className="w-full lg:w-[500px] reveal" style={{ transitionDelay: '0.3s' }}>
-            <div className="bg-[var(--card)] rounded-[var(--r-card)] shadow-[var(--shadow-card)] p-8 border border-[var(--hairline)]">
+            <div className="bg-[var(--card)] rounded-[var(--r-card)] shadow-[var(--shadow-card)] p-8 md:p-12 border border-[var(--hairline)]" style={{ padding: '40px' }}>
               
               {showSuccess && (
                 <div id="form-success" style={{ display: 'block' }}>
@@ -75,7 +75,7 @@ export default function Apply() {
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_next" id="form-next" value={formNextUrl} />
 
-                <div className="space-y-5">
+                <div className="space-y-8">
                   <div>
                     <label className="form-label" htmlFor="name">Name</label>
                     <input type="text" id="name" name="name" className="form-input" required placeholder="Your full name" />
@@ -112,11 +112,11 @@ export default function Apply() {
                     <textarea id="pain_point" name="pain_point" rows="3" className="form-input" required placeholder="Tell us what prompted you to reach out..."></textarea>
                   </div>
 
-                  <div className="pt-4">
-                    <button type="submit" className="btn btn-jade w-full text-lg py-4">Request my account audit</button>
+                  <div className="pt-6">
+                    <button type="submit" className="btn btn-jade w-full py-4 text-lg">Request my account audit</button>
                   </div>
 
-                  <p className="t-data text-xs text-[var(--muted)] text-center mt-6">
+                  <p className="t-data text-[11px] leading-relaxed text-[var(--muted)] text-center mt-8" style={{ marginTop: '32px' }}>
                     <strong>Qualification note:</strong> Saddl is built for brands doing $1M–$20M in revenue on Amazon, with or without Noon. If you're earlier than that, we may not be the right fit yet — but tell us where you are.
                   </p>
                 </div>

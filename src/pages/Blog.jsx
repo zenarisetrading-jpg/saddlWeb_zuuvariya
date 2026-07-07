@@ -39,65 +39,65 @@ export default function Blog() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <div className="module-card reveal flex flex-col" style={{ transitionDelay: '0.1s', opacity: 0.8 }}>
-              <div className="t-data text-xs text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
-              <h3 className="text-white font-bold text-xl mb-3 leading-snug">What an embedded ecommerce operator actually does (vs. an agency)</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+              <div className="t-data text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
+              <h3 className="t-body font-bold text-white mb-2 leading-snug">What an embedded ecommerce operator actually does (vs. an agency)</h3>
+              <p className="t-body-sm text-white/60 mb-6 flex-1">
                 The fundamental difference between handing strategy to an agency and embedding a team that owns the commercial engine.
               </p>
             </div>
 
             <div className="module-card reveal flex flex-col" style={{ transitionDelay: '0.2s', opacity: 0.8 }}>
-              <div className="t-data text-xs text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
-              <h3 className="text-white font-bold text-xl mb-3 leading-snug">Should you use an Amazon PPC tool or hire a managed service?</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+              <div className="t-data text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
+              <h3 className="t-body font-bold text-white mb-2 leading-snug">Should you use an Amazon PPC tool or hire a managed service?</h3>
+              <p className="t-body-sm text-white/60 mb-6 flex-1">
                 Why software alone stops at optimization, and when growing brands need to graduate to an operational team.
               </p>
             </div>
 
             <div className="module-card reveal flex flex-col" style={{ transitionDelay: '0.3s', opacity: 0.8 }}>
-              <div className="t-data text-xs text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
-              <h3 className="text-white font-bold text-xl mb-3 leading-snug">Why your Amazon ROAS looks great and your profit is shrinking</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+              <div className="t-data text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
+              <h3 className="t-body font-bold text-white mb-2 leading-snug">Why your Amazon ROAS looks great and your profit is shrinking</h3>
+              <p className="t-body-sm text-white/60 mb-6 flex-1">
                 Unpacking the trap of vanity metrics and how to transition to measuring true contribution margin.
               </p>
             </div>
 
             <div className="module-card reveal flex flex-col" style={{ transitionDelay: '0.4s', opacity: 0.8 }}>
-              <div className="t-data text-xs text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
-              <h3 className="text-white font-bold text-xl mb-3 leading-snug">Amazon vs. Noon UAE: what brands get wrong about running both platforms</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+              <div className="t-data text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
+              <h3 className="t-body font-bold text-white mb-2 leading-snug">Amazon vs. Noon UAE: what brands get wrong about running both platforms</h3>
+              <p className="t-body-sm text-white/60 mb-6 flex-1">
                 The operational pitfalls of treating MENA marketplaces interchangeably and how to build a unified system.
               </p>
             </div>
 
             <div className="module-card reveal flex flex-col" style={{ transitionDelay: '0.5s', opacity: 0.8 }}>
-              <div className="t-data text-xs text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
-              <h3 className="text-white font-bold text-xl mb-3 leading-snug">Noon Minutes: what Amazon sellers need to know before selling in the UAE</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+              <div className="t-data text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
+              <h3 className="t-body font-bold text-white mb-2 leading-snug">Noon Minutes: what Amazon sellers need to know before selling in the UAE</h3>
+              <p className="t-body-sm text-white/60 mb-6 flex-1">
                 A primer on the quick-commerce layer that most global agencies ignore entirely.
               </p>
             </div>
 
             <div className="module-card reveal flex flex-col" style={{ transitionDelay: '0.6s', opacity: 0.8 }}>
-              <div className="t-data text-xs text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
-              <h3 className="text-white font-bold text-xl mb-3 leading-snug">7 signs your Amazon agency is costing you more than it's making you</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+              <div className="t-data text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
+              <h3 className="t-body font-bold text-white mb-2 leading-snug">7 signs your Amazon agency is costing you more than it's making you</h3>
+              <p className="t-body-sm text-white/60 mb-6 flex-1">
                 How to spot the difference between an agency managing your spend and an operator managing your P&L.
               </p>
             </div>
 
             <div className="module-card reveal flex flex-col" style={{ transitionDelay: '0.7s', opacity: 0.8 }}>
-              <div className="t-data text-xs text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
-              <h3 className="text-white font-bold text-xl mb-3 leading-snug">How much does Amazon management cost in 2026?</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+              <div className="t-data text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
+              <h3 className="t-body font-bold text-white mb-2 leading-snug">How much does Amazon management cost in 2026?</h3>
+              <p className="t-body-sm text-white/60 mb-6 flex-1">
                 Breaking down the real costs of operations and why percentage-of-spend models are obsolete.
               </p>
             </div>
 
             <div className="module-card reveal flex flex-col" style={{ transitionDelay: '0.8s', opacity: 0.8 }}>
-              <div className="t-data text-xs text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
-              <h3 className="text-white font-bold text-xl mb-3 leading-snug">What to look for when hiring an Amazon management firm in the UAE</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+              <div className="t-data text-[var(--jade-mist)] mb-3 uppercase">Coming Soon</div>
+              <h3 className="t-body font-bold text-white mb-2 leading-snug">What to look for when hiring an Amazon management firm in the UAE</h3>
+              <p className="t-body-sm text-white/60 mb-6 flex-1">
                 A buyer's guide to separating the dashboard-senders from the actual operators in the MENA region.
               </p>
             </div>

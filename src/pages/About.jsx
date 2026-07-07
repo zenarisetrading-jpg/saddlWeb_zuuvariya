@@ -55,22 +55,22 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="module-card reveal" style={{ transitionDelay: '0.1s' }}>
               <div className="icon-tile">✦</div>
-              <h3 className="text-[var(--ink)] font-bold text-xl mb-3">We're operators, not vendors.</h3>
-              <p className="text-[var(--ink)] opacity-60 text-base leading-relaxed">
+              <h3 className="t-body font-bold mb-2">We're operators, not vendors.</h3>
+              <p className="t-body-sm text-[var(--muted)] flex-1">
                 We run our own ecommerce business across Amazon and Noon — verified storefronts, live inventory, real ad spend. Everything we do for clients we've done for ourselves first.
               </p>
             </div>
             <div className="module-card reveal" style={{ transitionDelay: '0.2s' }}>
               <div className="icon-tile">✦</div>
-              <h3 className="text-[var(--ink)] font-bold text-xl mb-3">We built the infrastructure.</h3>
-              <p className="text-[var(--ink)] opacity-60 text-base leading-relaxed">
+              <h3 className="t-body font-bold mb-2">We built the infrastructure.</h3>
+              <p className="t-body-sm text-[var(--muted)] flex-1">
                 The data pipeline, the intelligence layer, the reporting system — all proprietary. We didn't stitch together third-party tools and call it a platform. We built the connections between ads, inventory, pricing, returns, and financials because they didn't exist anywhere else.
               </p>
             </div>
             <div className="module-card reveal" style={{ transitionDelay: '0.3s' }}>
               <div className="icon-tile">✦</div>
-              <h3 className="text-[var(--ink)] font-bold text-xl mb-3">We own the outcome.</h3>
-              <p className="text-[var(--ink)] opacity-60 text-base leading-relaxed">
+              <h3 className="t-body font-bold mb-2">We own the outcome.</h3>
+              <p className="t-body-sm text-[var(--muted)] flex-1">
                 We don't hand you a dashboard and walk away. We're in the account, making decisions, every week. When something's wrong, we catch it. When something's working, we push it further.
               </p>
             </div>

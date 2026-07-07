@@ -73,10 +73,12 @@
     opacity:.06;
     mix-blend-mode:overlay;
   }
-  .t-display{font-weight:800;letter-spacing:-0.03em;line-height:1.0;font-size:clamp(2rem, 4.5vw, 3.5rem);text-wrap:balance}
-  .t-headline{font-family:'Gloock',Georgia,serif;font-weight:400;letter-spacing:-0.02em;line-height:1.10;font-size:clamp(1.25rem, 2.5vw, 2rem);text-wrap:balance;color:var(--jade)}
-  .t-body-lg{font-size:0.9375rem;line-height:1.6}
-  .t-data{font-family:'Fragment Mono',monospace;font-size:.75rem;letter-spacing:.01em;line-height:1.5}
+  .t-display{font-weight:800;letter-spacing:-0.03em;line-height:1.05;font-size:clamp(2rem, 4.5vw, 3.5rem);text-wrap:balance;color:var(--ink)}
+  .t-headline{font-family:var(--font-serif);font-weight:400;letter-spacing:-0.02em;line-height:1.15;font-size:clamp(1.25rem, 2.5vw, 2.25rem);text-wrap:balance;color:var(--jade)}
+  .t-body-lg{font-size:1.125rem;line-height:1.65;text-wrap:pretty}
+  .t-body{font-size:1rem;line-height:1.6;text-wrap:pretty}
+  .t-body-sm{font-size:0.875rem;line-height:1.5;text-wrap:pretty}
+  .t-data{font-family:var(--font-mono);font-size:0.8125rem;letter-spacing:0.02em;line-height:1.5;text-wrap:pretty}
   .c-jade{color:var(--jade)} .c-muted{color:var(--muted)}
   
   :root {
@@ -95,15 +97,19 @@
   .nav-link { font-size: 0.8125rem; font-weight: 600; color: #fff; text-decoration: none; opacity: 0.8; transition: opacity 0.2s; white-space: nowrap; }
   .nav-link:hover { opacity: 1; }
   
-  .btn-nav{background:var(--card);color:var(--ink);border:1px solid var(--hairline);border-radius:100px;padding:6px 14px;font-size:.75rem;font-weight:700;text-decoration:none;transition:all .2s;white-space:nowrap}
+  .btn-nav{background:var(--card);color:var(--ink);border:1px solid var(--hairline);border-radius:100px;padding:8px 16px;font-size:0.875rem;font-weight:600;text-decoration:none;transition:all .2s;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
   .btn-nav:hover{background:var(--jade);color:#fff}
   
-  .btn{background:var(--ink);color:var(--surface);border-radius:10px;padding:14px 32px;font-size:1rem;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;border:none;cursor:pointer}
+  .btn{box-sizing:border-box;background:var(--ink);color:var(--surface);border-radius:12px;padding:12px 24px;font-size:1rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:all .2s;border:none;cursor:pointer;text-align:center;white-space:nowrap;line-height:1}
   .btn:hover{background:oklch(0 0 0/.8)}
-  .btn-jade{background:var(--jade);color:#fff;border-radius:10px;padding:14px 32px;font-size:1rem}
+  .btn-jade{background:var(--jade);color:#fff;border-radius:12px;padding:12px 24px;font-size:1rem;font-weight:600}
   .btn-jade:hover{background:var(--jade-dark)}
-  .btn-outline{background:transparent;border:1.5px solid var(--hairline);color:var(--ink);border-radius:10px;padding:13px 31px;font-size:1rem;text-decoration:none;display:inline-block}
+  .btn-outline{background:transparent;border:1px solid var(--hairline);color:var(--ink);border-radius:12px;padding:12px 24px;font-size:1rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
   .btn-outline:hover{border-color:oklch(.75 .02 118.5);background:oklch(.96 .006 118.5)}
+
+  .form-label{display:block;margin-bottom:12px;font-size:0.875rem;font-weight:600;color:var(--ink)}
+  .form-input{box-sizing:border-box;width:100%;background:var(--surface);border:1px solid var(--hairline);border-radius:12px;padding:12px 16px;font-family:var(--font-sans);font-size:1rem;color:var(--ink);transition:all .2s;outline:none}
+  .form-input:focus{border-color:var(--jade);box-shadow:0 0 0 4px oklch(0.4 0.068 173 / 0.1)}
 
   .s-hero{padding-top:calc(var(--header-height) + clamp(2.5rem, 5vw, 4rem));padding-bottom:clamp(2rem, 4vw, 4rem)}
   
@@ -146,7 +152,7 @@
   .hero-chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--hairline);border-radius:100px;padding:4px 4px 4px 12px;margin-bottom:2rem}
   .hero-chip-tag{font-size:.6875rem;font-weight:800;color:var(--jade);letter-spacing:.05em;text-transform:uppercase}
   .hero-chip-text{font-size:.8125rem;color:var(--muted)}
-  .hero-body{max-width:640px;margin:1.75rem 0 2.5rem;color:var(--muted)}
+  .hero-body{max-width:640px;margin:1.75rem auto 2.5rem;color:var(--muted)}
   .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
   .hero-plat{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:3rem;font-family:'Fragment Mono',monospace;font-size:.8125rem;color:var(--muted)}
 

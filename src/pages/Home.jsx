@@ -106,51 +106,51 @@ export default function Home() {
         <div className="wrap">
           <div className="text-center mb-16 reveal">
             <h2 className="t-headline mt-4">Six intelligence layers.</h2>
-            <p className="t-body-lg text-[var(--ink)] opacity-70 mt-2">Built for the data that matters — contribution margin per SKU, not vanity metrics.</p>
-            <div className="t-data text-[var(--ink)] opacity-40 mt-6">Amazon (Global) · Noon UAE/KSA incl. Minutes · Meta · Google</div>
+            <p className="t-body-lg text-[var(--muted)] mt-2">Built for the data that matters — contribution margin per SKU, not vanity metrics.</p>
+            <div className="t-data text-[var(--muted)] mt-6">Amazon (Global) · Noon UAE/KSA incl. Minutes · Meta · Google</div>
           </div>
 
           <div className="modules-grid">
             <div className="module-card reveal">
               <div className="icon-tile"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="2,14 7,8.5 11,11.5 18,4"/><polyline points="13,4 18,4 18,9"/></svg></div>
-              <h3 className="text-[var(--ink)] font-bold text-lg mb-2">Advertising Intelligence</h3>
-              <p className="text-[var(--ink)] opacity-60 text-sm mb-6 flex-1">SP, SB, SD campaigns managed and validated. Every bid change tracked to a revenue delta.</p>
-              <div className="t-data text-[11px] text-[var(--ink)] opacity-40 border-t border-[var(--hairline-d)] pt-3">Jun 12 · bid +22% · +$1,250 validated · 14-day window</div>
+              <h3 className="t-body font-bold mb-2">Advertising Intelligence</h3>
+              <p className="t-body-sm text-[var(--muted)] mb-6 flex-1">SP, SB, SD campaigns managed and validated. Every bid change tracked to a revenue delta.</p>
+              <div className="t-data text-[var(--muted)] border-t border-[var(--hairline-d)] pt-4 mt-auto">Jun 12 · bid +22% · +$1,250 validated · 14-day window</div>
             </div>
 
             <div className="module-card reveal" style={{ transitionDelay: '0.1s' }}>
               <div className="icon-tile"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M10 1.5L18 6v8L10 18.5 2 14V6z"/><line x1="2" y1="6" x2="10" y2="10.5"/><line x1="10" y1="10.5" x2="18" y2="6"/><line x1="10" y1="10.5" x2="10" y2="18.5"/></svg></div>
-              <h3 className="text-[var(--ink)] font-bold text-lg mb-2">Inventory Intelligence</h3>
-              <p className="text-[var(--ink)] opacity-60 text-sm mb-6 flex-1">Reorder forecasting, FBA fee optimisation, stockout prevention. Contribution margin per unit.</p>
-              <div className="t-data text-[11px] text-[var(--ink)] opacity-40 border-t border-[var(--hairline-d)] pt-3">B08X · 47 units · reorder triggered · ETA 18d</div>
+              <h3 className="t-body font-bold mb-2">Inventory Intelligence</h3>
+              <p className="t-body-sm text-[var(--muted)] mb-6 flex-1">Reorder forecasting, FBA fee optimisation, stockout prevention. Contribution margin per unit.</p>
+              <div className="t-data text-[var(--muted)] border-t border-[var(--hairline-d)] pt-4 mt-auto">B08X · 47 units · reorder triggered · ETA 18d</div>
             </div>
 
             <div className="module-card reveal" style={{ transitionDelay: '0.2s' }}>
               <div className="icon-tile"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2H5a1 1 0 00-1 1v14a1 1 0 001 1h10a1 1 0 001-1V7z"/><polyline points="12,2 12,7 17,7"/><line x1="7" y1="11" x2="13" y2="11"/><line x1="7" y1="14" x2="11" y2="14"/></svg></div>
-              <h3 className="text-[var(--ink)] font-bold text-lg mb-2">Listing & Content</h3>
-              <p className="text-[var(--ink)] opacity-60 text-sm mb-6 flex-1">AI-generated copy optimised for search and conversion. A+, brand store, video briefs. Continuously tested.</p>
-              <div className="t-data text-[11px] text-[var(--ink)] opacity-40 border-t border-[var(--hairline-d)] pt-3">Listing update deployed · rank +12 · BSR 4,821→3,209</div>
+              <h3 className="t-body font-bold mb-2">Listing & Content</h3>
+              <p className="t-body-sm text-[var(--muted)] mb-6 flex-1">AI-generated copy optimised for search and conversion. A+, brand store, video briefs. Continuously tested.</p>
+              <div className="t-data text-[var(--muted)] border-t border-[var(--hairline-d)] pt-4 mt-auto">Listing update deployed · rank +12 · BSR 4,821→3,209</div>
             </div>
 
             <div className="module-card reveal">
               <div className="icon-tile"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M2.5 10.5L9.5 3H18V11.5L11 18.5 2.5 10.5z"/><circle cx="14" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></div>
-              <h3 className="text-[var(--ink)] font-bold text-lg mb-2">Pricing Intelligence</h3>
-              <p className="text-[var(--ink)] opacity-60 text-sm mb-6 flex-1">Competitive monitoring, Buy Box optimisation, promotional ROI modelling against real margin.</p>
-              <div className="t-data text-[11px] text-[var(--ink)] opacity-40 border-t border-[var(--hairline-d)] pt-3">Buy Box 94% · competitor −$1.40 · margin floor: met</div>
+              <h3 className="t-body font-bold mb-2">Pricing Intelligence</h3>
+              <p className="t-body-sm text-[var(--muted)] mb-6 flex-1">Competitive monitoring, Buy Box optimisation, promotional ROI modelling against real margin.</p>
+              <div className="t-data text-[var(--muted)] border-t border-[var(--hairline-d)] pt-4 mt-auto">Buy Box 94% · competitor −$1.40 · margin floor: met</div>
             </div>
 
             <div className="module-card reveal" style={{ transitionDelay: '0.1s' }}>
               <div className="icon-tile"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="6" width="4" height="12" rx="1"/><rect x="14" y="3" width="4" height="15" rx="1"/></svg></div>
-              <h3 className="text-[var(--ink)] font-bold text-lg mb-2">Financial Intelligence & P&L</h3>
-              <p className="text-[var(--ink)] opacity-60 text-sm mb-6 flex-1">True contribution margin per SKU: COGS, FBA fees, ad spend, returns. No rounding, no omissions.</p>
-              <div className="t-data text-[11px] text-[var(--ink)] opacity-40 border-t border-[var(--hairline-d)] pt-3">Revenue $18,420 · true CM $4,103 (22.3%) · dashboard CM $6,210</div>
+              <h3 className="t-body font-bold mb-2">Financial Intelligence & P&L</h3>
+              <p className="t-body-sm text-[var(--muted)] mb-6 flex-1">True contribution margin per SKU: COGS, FBA fees, ad spend, returns. No rounding, no omissions.</p>
+              <div className="t-data text-[var(--muted)] border-t border-[var(--hairline-d)] pt-4 mt-auto">Revenue $18,420 · true CM $4,103 (22.3%) · dashboard CM $6,210</div>
             </div>
 
             <div className="module-card reveal" style={{ transitionDelay: '0.2s' }}>
               <div className="icon-tile"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M10 1.5L3 4.5V10c0 4.5 3.1 8.3 7 9.5 3.9-1.2 7-5 7-9.5V4.5z"/><polyline points="7.5,10.5 9.5,12.5 13,8.5"/></svg></div>
-              <h3 className="text-[var(--ink)] font-bold text-lg mb-2">Brand Health</h3>
-              <p className="text-[var(--ink)] opacity-60 text-sm mb-6 flex-1">Review velocity, listing suppression, hijacker detection, BSR trends. Issues resolved, not reported.</p>
-              <div className="t-data text-[11px] text-[var(--ink)] opacity-40 border-t border-[var(--hairline-d)] pt-3">3 suppressions · 2 resolved · 1 escalated · reviews +8</div>
+              <h3 className="t-body font-bold mb-2">Brand Health</h3>
+              <p className="t-body-sm text-[var(--muted)] mb-6 flex-1">Review velocity, listing suppression, hijacker detection, BSR trends. Issues resolved, not reported.</p>
+              <div className="t-data text-[var(--muted)] border-t border-[var(--hairline-d)] pt-4 mt-auto">3 suppressions · 2 resolved · 1 escalated · reviews +8</div>
             </div>
           </div>
 
@@ -171,41 +171,41 @@ export default function Home() {
             <div className="proof-card reveal" style={{ transitionDelay: '0.1s' }}>
               <div className="proof-quote-bg">"</div>
               <div className="star-row text-[var(--jade)] mb-3 text-lg tracking-widest">★★★★★</div>
-              <q className="break-words">"We sell on three marketplaces from one warehouse. When a supplier is late, all three go dark together — for our top seller, that's AED 100K a month at risk. Our inventory management system built around supplier lead time, sales velocity, and cash flow, kept out-of-stock under 10% across 100+ SKUs."</q>
+              <q className="t-body break-words">"We sell on three marketplaces from one warehouse. When a supplier is late, all three go dark together — for our top seller, that's AED 100K a month at risk. Our inventory management system built around supplier lead time, sales velocity, and cash flow, kept out-of-stock under 10% across 100+ SKUs."</q>
               <div className="proof-author mt-6 flex items-center gap-3">
-                <div className="proof-avatar w-9 h-9 rounded-full bg-[var(--jade)] text-white text-[10px] font-bold flex items-center justify-center">HK</div>
-                <div className="proof-attr"><span className="proof-name font-semibold text-sm text-[var(--ink)]">Home and Kitchen Essentials brand</span><br/><span className="proof-co text-xs text-[var(--muted)]">Amazon+Noon UAE and KSA · H1 2026</span></div>
+                <div className="proof-avatar w-10 h-10 rounded-full bg-[var(--jade)] text-white text-xs font-bold flex items-center justify-center">HK</div>
+                <div className="proof-attr"><span className="proof-name font-semibold text-[var(--ink)]">Home and Kitchen Essentials brand</span><br/><span className="proof-co t-body-sm text-[var(--muted)]">Amazon+Noon UAE and KSA · H1 2026</span></div>
               </div>
             </div>
 
             <div className="proof-card reveal" style={{ transitionDelay: '0.2s' }}>
               <div className="proof-quote-bg">"</div>
               <div className="star-row text-[var(--jade)] mb-3 text-lg tracking-widest">★★★★★</div>
-              <q className="break-words">"One of our sellers was paying full price to advertise to customers who'd have bought anyway — 60% of their ad budget was chasing people already searching their own brand name. We cut that spend by a quarter. Revenue didn't drop — it went up. AED 5,400 a month in cost savings, reinvested and reclaimed."</q>
+              <q className="t-body break-words">"One of our sellers was paying full price to advertise to customers who'd have bought anyway — 60% of their ad budget was chasing people already searching their own brand name. We cut that spend by a quarter. Revenue didn't drop — it went up. AED 5,400 a month in cost savings, reinvested and reclaimed."</q>
               <div className="proof-author mt-6 flex items-center gap-3">
-                <div className="proof-avatar w-9 h-9 rounded-full bg-[var(--jade)] text-white text-[10px] font-bold flex items-center justify-center">HB</div>
-                <div className="proof-attr"><span className="proof-name font-semibold text-sm text-[var(--ink)]">Hydration brand</span><br/><span className="proof-co text-xs text-[var(--muted)]">Amazon UAE · Q2 2026</span></div>
+                <div className="proof-avatar w-10 h-10 rounded-full bg-[var(--jade)] text-white text-xs font-bold flex items-center justify-center">HB</div>
+                <div className="proof-attr"><span className="proof-name font-semibold text-[var(--ink)]">Hydration brand</span><br/><span className="proof-co t-body-sm text-[var(--muted)]">Amazon UAE · Q2 2026</span></div>
               </div>
             </div>
 
             <div className="proof-card reveal" style={{ transitionDelay: '0.3s' }}>
               <div className="proof-quote-bg">"</div>
               <div className="star-row text-[var(--jade)] mb-3 text-lg tracking-widest">★★★★★</div>
-              <q className="break-words">"One seller's Noon account went out of budget every single day — a single setting was burning the budget by afternoon. We fixed that: ROAS 1.04× → 2.70× in 20 days. Then we rebuilt the account with a structured approach — brand defense, category targeting, competitor conquest — each with its own budget and bid logic. Current ROAS: 3.15×, nearly tripling where it started."</q>
+              <q className="t-body break-words">"One seller's Noon account went out of budget every single day — a single setting was burning the budget by afternoon. We fixed that: ROAS 1.04× → 2.70× in 20 days. Then we rebuilt the account with a structured approach — brand defense, category targeting, competitor conquest — each with its own budget and bid logic. Current ROAS: 3.15×, nearly tripling where it started."</q>
               <div className="proof-author mt-6 flex items-center gap-3">
-                <div className="proof-avatar w-9 h-9 rounded-full bg-[var(--jade)] text-white text-[10px] font-bold flex items-center justify-center">HB</div>
-                <div className="proof-attr"><span className="proof-name font-semibold text-sm text-[var(--ink)]">Hydration brand</span><br/><span className="proof-co text-xs text-[var(--muted)]">Noon UAE · Q2 2026</span></div>
+                <div className="proof-avatar w-10 h-10 rounded-full bg-[var(--jade)] text-white text-xs font-bold flex items-center justify-center">HB</div>
+                <div className="proof-attr"><span className="proof-name font-semibold text-[var(--ink)]">Hydration brand</span><br/><span className="proof-co t-body-sm text-[var(--muted)]">Noon UAE · Q2 2026</span></div>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 t-data text-[var(--ink)] text-[13px] font-semibold tracking-wider reveal">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 t-data text-[var(--ink)] text-sm font-semibold tracking-wider reveal">
             <span>Multi-marketplaces operations</span>
-            <span className="text-[var(--hairline)]">|</span>
+            <span className="text-[var(--hairline)] hidden md:inline">|</span>
             <span>3+ geos covered. 100+ SKUs managed</span>
-            <span className="text-[var(--hairline)]">|</span>
+            <span className="text-[var(--hairline)] hidden md:inline">|</span>
             <span>AED 40,000+ recovered/saved monthly</span>
-            <span className="text-[var(--hairline)]">|</span>
+            <span className="text-[var(--hairline)] hidden md:inline">|</span>
             <span>Below -10% out-of-stock</span>
           </div>
         </div>

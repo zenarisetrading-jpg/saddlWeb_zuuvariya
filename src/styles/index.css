@@ -1,29 +1,14 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @theme {
-  --color-primary: #FFFFFF;
-  --color-on-primary: #000000;
-  --color-secondary: #A1A1AA;
-  --color-accent: #3B82F6;
-  --color-background: #000000;
-  --color-foreground: #FFFFFF;
-  --color-muted: #111111;
-  --color-border: #222222;
-  
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-serif: "Gloock", Georgia, serif;
+  --font-mono: "Fragment Mono", monospace;
 }
 
 @layer base {
   html, body {
     overflow-x: hidden;
   }
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
-  }
+  /* body styling is mostly handled in global.css to use oklch variables */
 }
