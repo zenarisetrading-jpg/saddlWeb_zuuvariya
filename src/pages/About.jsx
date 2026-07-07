@@ -80,8 +80,8 @@ export default function About() {
 
       <section className="s-apply tex-ledger grain">
         <div className="wrap text-center py-12 reveal">
-          <div className="mb-10">
-            <Link to="/apply" className="btn btn-jade text-lg px-8 py-4">Request an account audit</Link>
+          <div className="mb-10 px-4 sm:px-0">
+            <Link to="/apply" className="btn btn-jade w-full sm:w-auto text-lg px-8 py-4">Request an account audit</Link>
           </div>
         </div>
       </section>

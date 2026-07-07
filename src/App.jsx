@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Apply from './pages/Apply';
 import FAQ from './pages/FAQ';
 import SaddlOS from './pages/SaddlOS';
+import Blog from './pages/Blog';
 // We are keeping AltApp and AltApp2 since they were experimental versions
 import AltApp from './app/AltApp';
 import AltApp2 from './app/AltApp2';
@@ -25,6 +26,8 @@ export default function App() {
           <Route path="/apply" element={<Apply />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/saddl-os" element={<SaddlOS />} />
+          <Route path="/blogs" element={<Blog />} />
+          <Route path="/blog" element={<Blog />} />
           
           {/* Experimental Routes */}
           <Route path="/alt" element={<AltApp />} />

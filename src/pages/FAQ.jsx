@@ -115,8 +115,8 @@ export default function FAQ() {
         <div className="wrap text-center py-12 reveal">
           <div className="hero-chip mb-6"><span className="hero-chip-tag">cleared desk</span></div>
           <h2 className="t-headline mb-8">Ready to see what the numbers show?</h2>
-          <div className="mb-4">
-            <Link to="/apply" className="btn btn-jade text-lg px-8 py-4">Request an account audit</Link>
+          <div className="mb-4 px-4 sm:px-0">
+            <Link to="/apply" className="btn btn-jade w-full sm:w-auto text-lg px-8 py-4">Request an account audit</Link>
           </div>
         </div>
       </section>

@@ -42,23 +42,23 @@ export default function Home() {
               Advertising, inventory, pricing, listings, and contribution margin — run as one system everywhere you sell, from Amazon and Walmart to Noon and your own D2C. Not software you operate. A team that operates it for you.
             </p>
             
-            <div className="hero-ctas justify-center reveal" style={{ transitionDelay: '0.4s' }}>
-              <Link to="/apply" className="btn btn-jade">Request an account audit</Link>
-              <Link to="/saddl-os" className="btn btn-outline">Explore Saddl OS</Link>
+            <div className="hero-ctas justify-center reveal flex-col sm:flex-row" style={{ transitionDelay: '0.4s' }}>
+              <Link to="/apply" className="btn btn-jade w-full sm:w-auto text-center">Request an account audit</Link>
+              <Link to="/saddl-os" className="btn btn-outline w-full sm:w-auto text-center">Explore Saddl OS</Link>
             </div>
             
-            <div className="hero-plat justify-center reveal" style={{ transitionDelay: '0.5s' }}>
+            <div className="hero-plat justify-center reveal gap-y-2 gap-x-3 md:gap-6" style={{ transitionDelay: '0.5s' }}>
               <span>Amazon (Global)</span>
-              <span>•</span>
+              <span className="hidden md:inline">•</span>
               <span>Noon UAE/KSA</span>
-              <span>•</span>
+              <span className="hidden md:inline">•</span>
               <span>Walmart</span>
-              <span>•</span>
+              <span className="hidden md:inline">•</span>
               <span>Meta & Google D2C</span>
             </div>
           </div>
 
-          <div className="hero-panel text-left flex flex-col" style={{ height: '500px', padding: 0, background: 'transparent', zIndex: 30, position: 'relative', borderRadius: '24px', boxShadow: 'var(--shadow-panel)', marginBottom: '4rem' }}>
+          <div className="hero-panel text-left flex flex-col" style={{ padding: 0, background: 'transparent', zIndex: 30, position: 'relative', borderRadius: '24px', boxShadow: 'var(--shadow-panel)', marginBottom: '4rem' }}>
             <iframe src="/saddl-os-preview_5.html" width="100%" height="100%" frameBorder="0" style={{ border: 'none', borderRadius: '24px', overflow: 'hidden', display: 'block' }}></iframe>
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function Home() {
             <div className="proof-card reveal" style={{ transitionDelay: '0.1s' }}>
               <div className="proof-quote-bg">"</div>
               <div className="star-row text-[var(--jade)] mb-3 text-lg tracking-widest">★★★★★</div>
-              <q>"We sell on three marketplaces from one warehouse. When a supplier is late, all three go dark together — for our top seller, that's AED 100K a month at risk. Our inventory management system built around supplier lead time, sales velocity, and cash flow, kept out-of-stock under 10% across 100+ SKUs."</q>
+              <q className="break-words">"We sell on three marketplaces from one warehouse. When a supplier is late, all three go dark together — for our top seller, that's AED 100K a month at risk. Our inventory management system built around supplier lead time, sales velocity, and cash flow, kept out-of-stock under 10% across 100+ SKUs."</q>
               <div className="proof-author mt-6 flex items-center gap-3">
                 <div className="proof-avatar w-9 h-9 rounded-full bg-[var(--jade)] text-white text-[10px] font-bold flex items-center justify-center">HK</div>
                 <div className="proof-attr"><span className="proof-name font-semibold text-sm text-[var(--ink)]">Home and Kitchen Essentials brand</span><br/><span className="proof-co text-xs text-[var(--muted)]">Amazon+Noon UAE and KSA · H1 2026</span></div>
@@ -181,7 +181,7 @@ export default function Home() {
             <div className="proof-card reveal" style={{ transitionDelay: '0.2s' }}>
               <div className="proof-quote-bg">"</div>
               <div className="star-row text-[var(--jade)] mb-3 text-lg tracking-widest">★★★★★</div>
-              <q>"One of our sellers was paying full price to advertise to customers who'd have bought anyway — 60% of their ad budget was chasing people already searching their own brand name. We cut that spend by a quarter. Revenue didn't drop — it went up. AED 5,400 a month in cost savings, reinvested and reclaimed."</q>
+              <q className="break-words">"One of our sellers was paying full price to advertise to customers who'd have bought anyway — 60% of their ad budget was chasing people already searching their own brand name. We cut that spend by a quarter. Revenue didn't drop — it went up. AED 5,400 a month in cost savings, reinvested and reclaimed."</q>
               <div className="proof-author mt-6 flex items-center gap-3">
                 <div className="proof-avatar w-9 h-9 rounded-full bg-[var(--jade)] text-white text-[10px] font-bold flex items-center justify-center">HB</div>
                 <div className="proof-attr"><span className="proof-name font-semibold text-sm text-[var(--ink)]">Hydration brand</span><br/><span className="proof-co text-xs text-[var(--muted)]">Amazon UAE · Q2 2026</span></div>
@@ -191,7 +191,7 @@ export default function Home() {
             <div className="proof-card reveal" style={{ transitionDelay: '0.3s' }}>
               <div className="proof-quote-bg">"</div>
               <div className="star-row text-[var(--jade)] mb-3 text-lg tracking-widest">★★★★★</div>
-              <q>"One seller's Noon account went out of budget every single day — a single setting was burning the budget by afternoon. We fixed that: ROAS 1.04× → 2.70× in 20 days. Then we rebuilt the account with a structured approach — brand defense, category targeting, competitor conquest — each with its own budget and bid logic. Current ROAS: 3.15×, nearly tripling where it started."</q>
+              <q className="break-words">"One seller's Noon account went out of budget every single day — a single setting was burning the budget by afternoon. We fixed that: ROAS 1.04× → 2.70× in 20 days. Then we rebuilt the account with a structured approach — brand defense, category targeting, competitor conquest — each with its own budget and bid logic. Current ROAS: 3.15×, nearly tripling where it started."</q>
               <div className="proof-author mt-6 flex items-center gap-3">
                 <div className="proof-avatar w-9 h-9 rounded-full bg-[var(--jade)] text-white text-[10px] font-bold flex items-center justify-center">HB</div>
                 <div className="proof-attr"><span className="proof-name font-semibold text-sm text-[var(--ink)]">Hydration brand</span><br/><span className="proof-co text-xs text-[var(--muted)]">Noon UAE · Q2 2026</span></div>
@@ -281,8 +281,8 @@ export default function Home() {
           <h2 className="t-headline">Your accounts are running right now.</h2>
           <p className="t-body-lg text-[var(--muted)] mt-4 mb-8">The question is whether someone accountable is running them.</p>
           
-          <div className="mb-10">
-            <Link to="/apply" className="btn btn-jade px-8 py-4 text-lg">Apply</Link>
+          <div className="mb-10 w-full px-4 sm:px-0">
+            <Link to="/apply" className="btn btn-jade w-full sm:w-auto px-8 py-4 text-lg">Apply</Link>
           </div>
 
           <p className="t-data text-xs text-[var(--muted)] max-w-2xl mx-auto">
